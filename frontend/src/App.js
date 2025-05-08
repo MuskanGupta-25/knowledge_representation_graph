@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('https://knowledge-representation-graph.onrender.com/', { text });
+      const res = await axios.post('https://knowledge-representation-graph.onrender.com/generate-graph', { text });
       setImage(`data:image/png;base64,${res.data.image}`);
       setConnectionStatus('Graph generated successfully!');
     } catch (error) {
@@ -23,7 +23,7 @@ function App() {
 
   const testBackend = async () => {
     try {
-      const response = await axios.get('https://knowledge-representation-graph.onrender.com/');
+      const response = await axios.get('https://knowledge-representation-graph.onrender.com/test-connection');
       console.log("Backend response:", response.data);
       setConnectionStatus(response.data.message);
     } catch (error) {

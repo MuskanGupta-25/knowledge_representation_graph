@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/generate-graph', { text });
+      const res = await axios.post('https://my-knowledge-graph-api.onrender.com/generate-graph', { text });
       setImage(`data:image/png;base64,${res.data.image}`);
       setConnectionStatus('Graph generated successfully!');
     } catch (error) {

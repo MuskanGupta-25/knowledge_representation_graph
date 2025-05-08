@@ -15,6 +15,7 @@ function App() {
       setConnectionStatus('Graph generated successfully!');
     } catch (error) {
       console.error("Error sending request to generate graph:", error);
+      console.error("Full error object:", error);
       setImage(null);
       setConnectionStatus('Error generating graph. Check backend connection.');
     }

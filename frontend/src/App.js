@@ -23,7 +23,7 @@ function App() {
 
   const testBackend = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/test-connection');
+      const response = await axios.get('https://knowledge-representation-graph.onrender.com/');
       console.log("Backend response:", response.data);
       setConnectionStatus(response.data.message);
     } catch (error) {
